@@ -1,0 +1,33 @@
+
+<h1> Pizza Place Order Form </h1>
+
+<img src="pizza.jpg" alt="Image Missing">
+<br/>
+
+<form id="myForm" method="" action="#">
+	<p>Name <input type="text" name="name" placeholder="Your name here" required > </p>
+	<p>Address (ex. 1600 Main St. Houston, TX 77005) <input type="text" name="name"  placeholder="Your address here" required> </p>
+	<p>Phone (ex. 713-348-1234) <input type= "tel" name="phone" pattern='\d\d\d-\d\d\d-\d\d\d\d' placeholder="Your number here" required> </p>
+	
+	<p> Pizza Size: <br>
+	<input type="radio" name="size" value="large" checked> Large <input type="radio" name="size" value="medium"> Medium <input type="radio" name="size" value="small" required> Small </p>
+
+	<p> Pizza Toppings: <br>
+	<input type="checkbox" name="topping" value="Sausage" checked> Sausage 
+	<input type="checkbox" name="topping" value="Pepperoni"> Pepperoni 
+	<input type="checkbox" name="topping" value="Olives"> Jalapenos 
+	<input type="checkbox" name="topping" value="Olives"> Pineapple </p>
+	
+	<input type="submit" name="order" value="Place Order" ><!--onclick= "return check()">-->
+	<input type="reset" name="clear" value="Clear Form">
+
+
+</form>
+<script>
+function check(){
+
+	window.alert("ERROR");
+	return false;
+}
+</script>
+
