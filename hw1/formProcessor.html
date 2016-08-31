@@ -1,71 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head> <title>Login Form</title>
+	   <meta charset="utf-8">
+	   <meta name="author" content="Iqra Dada">
+	</head>
+	   
+	<body onload= "getTable()">
+		<table>
+			<tr>
+				<th>Key</th><th>Value</th>
+		    </tr>
+		    <tr>
+		    	<td>Account Name</td><td name="name" id="name"></td>
+		    </tr>
+		   	<tr>
+		       	<td>Display Name</td> <td name="dname" id="dname"></td>
+		    </tr>
+		    <tr>
+		        <td>Email Address</td> <td name="email" id="email"></td> 
+		    </tr>
+		    <tr><td>Phone Number</td><td name="phone" id="phone"></td>
+		    </tr>
+		    <tr>
+		 		<td>Date of Birth</td><td name="dob" id="dob"></td>
+		    </tr>
+		    <tr>
+		       	<td>Zip Code</td><td name="zip" id="zip"></td>
+		    </tr>
+		    <tr>
+		        <td>Password</td><td name="pw1" id="pw1"></td>
+		    </tr>
+		    <tr>
+		        <td>Password Confirmation</td><td name="pw2" id="pw2"></td>
+		    </tr>
+		    <tr>
+		        <td>Timestamp</td><td name="timestamp" id="timestamp"></td>
+		    </tr>
+		</table>
 
-<body onload= "getAll()">
+		<script>
 
-
-<table>
-	<tr>
-		<th>Key</th><th>Value</th>
-    </tr>
-    <tr>
-    	<td>Account Name</td><td name='name' id='name'></td>
-    </tr>
-   	<tr>
-       	<td>Display Name</td> <td name='dname' id='dname'></td>
-    </tr>
-    <tr>
-        <td>Email Address</td> <td name='email' id='email'></td> 
-    </tr>
-    <tr><td>Phone Number</td><td name='phone' id='phone'></td>
-    </tr>
-    <tr>
- 		<td>Date of Birth</td><td name='dob' id='dob'></td>
-    </tr>
-    <tr>
-       	<td>Zip Code</td><td name='zip' id='zip'></td>
-    </tr>
-    <tr>
-        <td>Password</td><td name='pw1' id='pw1'></td>
-    </tr>
-    <tr>
-        <td>Password Confirmation</td><td name='pw2' id='pw2'></td>
-    </tr>
-</table>
-
-<p> Timestamp </p> <p name='timestamp' id='timestamp'>  </p>
-
-
-<script>
-function getAll(){
-	getTable()
-}
-
-function findKey(key){
-	var queryString = window.location.search;
-	queryString = queryString.substring(1).split('&');
-	for (var kv in queryString){
-		var keys = queryString[kv].split('=');
-		if(key == keys[0]){
-			return keys[1];
+		function findKey(key){
+			var queryString = window.location.search;
+			queryString = queryString.substring(1).split('&');
+			for (var kv in queryString){
+				var keys = queryString[kv].split('=');
+				if(key == keys[0]){
+					return keys[1];
+				}
+			}
 		}
-	}
-}
 
-function getTable(){
-	document.getElementById('name').innerHTML = findKey('name');
-	document.getElementById('dname').innerHTML = findKey('dname');
-	document.getElementById('email').innerHTML = findKey('email');
-	document.getElementById('phone').innerHTML = findKey('phone');
-	document.getElementById('dob').innerHTML = findKey('month') + "/" + findKey('day') + "/" + findKey('year');
-	document.getElementById('zip').innerHTML = findKey('zip');
-	document.getElementById('pw1').innerHTML = findKey('pw1');
-	document.getElementById('pw2').innerHTML = findKey('pw2');	
+		function getTable(){
+			document.getElementById('name').innerHTML = findKey('name');
+			document.getElementById('dname').innerHTML = findKey('dname');
+			document.getElementById('email').innerHTML = findKey('email');
+			document.getElementById('phone').innerHTML = findKey('phone');
+			document.getElementById('dob').innerHTML = findKey('month') + "/" + findKey('day') + "/" + findKey('year');
+			document.getElementById('zip').innerHTML = findKey('zip');
+			document.getElementById('pw1').innerHTML = findKey('pw1');
+			document.getElementById('pw2').innerHTML = findKey('pw2');	
 
-	document.getElementbyId('timestamp').value = findKey('timestamp');
-}
-
-
-
-</script>
-
-
-</body>
+			document.getElementbyId('timestamp').innerHTML = findKey('timestamp');
+		}
+		</script>
+	</body>
+</html>
